@@ -3,7 +3,6 @@ import React from 'react'
 const Timer = (props) => {
     const [timer,setTimer] = useState({started:new Date(),ended:new Date()});
     const [timerId,setTimerId] = useState(undefined);
-
       
     function updateTimer(){
         setTimer(prevTimer => {
