@@ -1,5 +1,5 @@
 import React from 'react'
-
+import classes from './Timer.module.css'
 const Timer = (props) => {
     const [timer,setTimer] = useState({started:new Date(),ended:new Date()});
     const [timerId,setTimerId] = useState(undefined);

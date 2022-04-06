@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './App';
+import store from './redux/store';
 
 /*  
   TODO:
@@ -11,6 +13,8 @@ import App from './App';
   добавить скор-боард с формой для отправки (пока в локал сторедже)
 */
 ReactDOM.render(
-    <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );

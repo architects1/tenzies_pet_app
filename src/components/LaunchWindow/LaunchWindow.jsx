@@ -1,14 +1,20 @@
 import React from 'react'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { startGame } from '../../redux/actions';
+import Button from '../../UI/Button/Button'
+import classes from './LaunchWindow.module.css'
 const LaunchWindow = () => {
+
+  const dispatch = useDispatch();
+
   return (
-    <div className="launchWindow">
-        <div className="viewScoresButton" onClick={()=> false}>
+    <div className={classes.LaunchWindow}>
+        <Button onClick={()=> console.log('Показать скорбоард')}>
             View scores
-        </div>
-        <div class="startButton" onClick={()=> false}>
+        </Button>
+        <Button onClick={()=> dispatch(startGame())}>
             Start game
-        </div>
+        </Button>
     </div>
   )
 }

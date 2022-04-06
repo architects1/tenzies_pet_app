@@ -2,6 +2,8 @@ import { useState, useEffect} from 'react';
 import Die from '../Die/Die';
 import { nanoid } from 'nanoid';
 import Confetti from 'react-confetti';
+import Button from '../../UI/Button/Button';
+import classes from './GameBoard.module.css'
 
 const GameBoard = () => {
   const [dice,setDice] = useState(allNewDice())
@@ -84,7 +86,7 @@ const GameBoard = () => {
   return (
     <div className='gameBoard'>
       {tenzies && <Confetti/>}
-        <div className="dice">
+        <div className={classes.dice}>
           {dice.map((die) => 
             <Die 
               key={die.id} 
@@ -95,9 +97,9 @@ const GameBoard = () => {
             /> 
           )}
         </div>
-        <button className="roll" onClick={rollDice}>
+        <Button onClick={rollDice}>
           {tenzies ? 'New Game' : 'Roll'}
-        </button>
+        </Button>
     </div>
   )
 }
